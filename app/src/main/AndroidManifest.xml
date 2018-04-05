@@ -48,6 +48,8 @@
         </activity>
         <activity android:name=".fragment.TabLayoutViewPagerFragmentActivity">
         </activity>
+        <activity android:name=".animation.Animation2Activity">
+        </activity>
     </application>
 
 </manifest>

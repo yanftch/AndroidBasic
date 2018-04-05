@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.yanftch.applibrary.base.BaseActivity;
 import com.yanftch.applibrary.lv_adapter.CommonAdapter;
 import com.yanftch.applibrary.lv_adapter.ViewHolder;
+import com.yanftch.basic.animation.Animation2Activity;
 import com.yanftch.basic.animation.AnimationActivity;
 import com.yanftch.basic.entity.Item;
 import com.yanftch.basic.event.EventActivity;
@@ -53,9 +54,7 @@ public class MainActivity extends BaseActivity {
         datas.add(new Item("共享动画", 6, AnimationActivity.class));
         datas.add(new Item("事件分发机制", 8, EventActivity.class));
         datas.add(new Item("Fragment切换", 9, FragmentChangeMainActivity.class));
-
-
-        
+        datas.add(new Item("动画", 10, Animation2Activity.class));
     }
 
     @Override
@@ -130,8 +129,8 @@ public class MainActivity extends BaseActivity {
          * 只能获取到value值
          */
         Collection<Integer> values = map.values();
-        for (Integer value : values){
-            Log.e(TAG, "map: map.values()====value = "+value);
+        for (Integer value : values) {
+            Log.e(TAG, "map: map.values()====value = " + value);
         }
     }
 
