@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yanftch.basic.service.ServiceActivity">
+
+    <Button
+        android:id="@+id/btnStartService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Service"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnStopService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Service"
+        android:textAllCaps="false"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/color_999999"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnBindService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bind Service"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnUnbingService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UnBind Service"
+        android:textAllCaps="false"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/color_999999"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnStartIntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start IntentService"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnStopIntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop  IntentService"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

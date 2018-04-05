@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.yanftch.basic">
+
+    <!-- 系统弹框权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:name=".application.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.MyService"/>
+        <service android:name=".service.MyBindService"/>
+
+        <activity android:name=".service.ServiceActivity">
+        </activity>
+        <activity android:name=".rxjava.RxJavaMainActivity">
+        </activity>
+        <activity android:name=".handler.HandlerActivity">
+        </activity>
+        <activity android:name=".test.TestActivity">
+        </activity>
+        <activity android:name=".event.EventActivity">
+        </activity>
+        <activity android:name=".sliding_conflict.SlidingConflictActivity">
+        </activity>
+        <activity android:name=".glide.GlideDemoActivity"/>
+        <activity android:name=".recyclerview.RecyclerViewHeadFootActivity"/>
+        <activity android:name=".animation.AnimationActivity">
+        </activity>
+        <activity android:name=".fragment.FragmentChangeMainActivity">
+        </activity>
+        <activity android:name=".fragment.TabLayoutViewPagerFragmentActivity">
+        </activity>
+    </application>
+
+</manifest>

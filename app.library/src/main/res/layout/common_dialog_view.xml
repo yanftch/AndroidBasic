@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/shape_dialog_circle_bg"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/value_20_dp">
+
+        <TextView
+            android:id="@+id/dialog_textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333333"/>
+
+        <TextView
+            android:id="@+id/dialog_textView_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/value_20_dp"
+            android:layout_marginTop="@dimen/value_20_dp"
+            android:gravity="center"
+            android:paddingLeft="@dimen/value_20_dp"
+            android:paddingRight="@dimen/value_20_dp"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/value_1_dp"
+            android:background="@color/color_f4f4f4"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialog_textView_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/value_20_dp"
+                android:textColor="@color/color_333333"/>
+
+            <TextView
+                android:id="@+id/dialog_textView_segment"
+                android:layout_width="@dimen/value_1_dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_f4f4f4"/>
+
+            <TextView
+                android:id="@+id/dialog_textView_right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/value_20_dp"
+                android:textColor="@color/color_3CB4FF"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

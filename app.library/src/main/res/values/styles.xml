@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- dialog 样式  activity变暗 -->
+    <style name="dialog_background_dimEnabled" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- activity 变暗 dd-->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:textColor">@color/color_242424</item>
+    </style>
+
+    <style name="ProgressStyle">
+        <item name="android:indeterminateDrawable">@drawable/common_view_progress_bg</item>
+    </style>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_242424">#242424</color>
+    <color name="transparent_bg">#00000000</color>
+    <color name="alpha_transparent_bg">#c0000000</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="background">#FFFFFF</color>
+    <color name="color_44dd33">#44dd33</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
+    <color name="color_3CB4FF">#3CB4FF</color>
+
+</resources>

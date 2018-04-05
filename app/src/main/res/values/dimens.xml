@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="value_10dp">10dp</dimen>
+    <dimen name="value_1dp">1dp</dimen>
+
+        <dimen name="value_1px">1px</dimen>
+        <dimen name="value_10px">10px</dimen>
+        <dimen name="value_12px">12px</dimen>
+        <dimen name="value_14px">14px</dimen>
+        <dimen name="value_16px">16px</dimen>
+        <dimen name="value_20px">20px</dimen>
+        <dimen name="value_22px">22px</dimen>
+        <dimen name="value_24px">24px</dimen>
+        <dimen name="value_30px">30px</dimen>
+        <dimen name="value_32px">32px</dimen>
+        <dimen name="value_36px">36px</dimen>
+        <dimen name="value_38px">38px</dimen>
+        <dimen name="value_48px">48px</dimen>
+
+
+        <dimen name="value_5dp">5dp</dimen>
+        <dimen name="value_20dp">20dp</dimen>
+        <dimen name="value_16dp">16dp</dimen>
+        <dimen name="value_12dp">12dp</dimen>
+
+
+        <dimen name="value_14sp">14sp</dimen>
+        <dimen name="value_16sp">16sp</dimen>
+        <dimen name="value_24dp">24dp</dimen>
+        <dimen name="value_14dp">14dp</dimen>
+        <dimen name="value_18dp">18dp</dimen>
+        <dimen name="value_8dp">8dp</dimen>
+    <dimen name="value_2dp">2dp</dimen>
+    <dimen name="value_40dp">40dp</dimen>
+    <dimen name="value_8_px">8dp</dimen>
+
+</resources>

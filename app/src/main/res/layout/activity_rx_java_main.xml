@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yanftch.basic.rxjava.RxJavaMainActivity">
+
+    <ListView
+        android:id="@+id/rxJavaListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/color_999999"
+        android:dividerHeight="@dimen/value_1dp"/>
+</LinearLayout>

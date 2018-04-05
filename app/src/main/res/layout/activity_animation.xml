@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yanftch.basic.animation.AnimationActivity">
+    <!--原始的跳转动画-->
+    <Button
+        android:id="@+id/btnAnimOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="原始跳转实现"/>
+
+    <Button
+        android:id="@+id/btnAnim1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="共享-makeScaleUpAnimation"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnAnimOrigin"/>
+
+    <Button
+        android:id="@+id/btnAnim2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="共享-makeThumbnailScaleUpAnimation"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnAnim1"/>
+
+    <Button
+        android:id="@+id/btnAnim3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="共享-makeClipRevealAnimation"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnAnim2"/>
+
+    <Button
+        android:id="@+id/btnAnim4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="共享-makeSceneTransitionAnimation"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnAnim3"/>
+
+    <Button
+        android:id="@+id/btnAnim5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="共享-makeCustomAnimation"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnAnim4"/>
+
+    <ImageView
+        android:id="@+id/imageViewAnchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:transitionName="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ancho2"
+        android:transitionName="@string/app_name"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAnim5"/>
+</android.support.constraint.ConstraintLayout>
