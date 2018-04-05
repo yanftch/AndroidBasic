@@ -53,6 +53,9 @@ public class MainActivity extends BaseActivity {
         datas.add(new Item("共享动画", 6, AnimationActivity.class));
         datas.add(new Item("事件分发机制", 8, EventActivity.class));
         datas.add(new Item("Fragment切换", 9, FragmentChangeMainActivity.class));
+
+
+        
     }
 
     @Override

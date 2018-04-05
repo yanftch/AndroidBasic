@@ -11,6 +11,14 @@ import com.yanftch.basic.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Author : yanftch
+ * Date   : 2018/4/5
+ * Time   : 15:08
+ * Desc   : Fragment的add+hide+show实现，切换的时候不会重走生命周期
+ * add+replace--->会重走生命周期
+ */
+
 public class FragmentChangeMainActivity extends BaseActivity {
 
     @BindView(R.id.btn1)

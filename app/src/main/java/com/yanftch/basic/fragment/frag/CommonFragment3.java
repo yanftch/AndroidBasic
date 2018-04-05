@@ -89,8 +89,11 @@ public class CommonFragment3 extends Fragment {
     }
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
         Log.e(TAG, "setUserVisibleHint: "+index+"   "+isVisibleToUser);
+        if (isVisibleToUser){
+            Log.e(TAG, "setUserVisibleHint: 此处我要在<CommonFragment3>中进行网络请求~~~~333");
+        }
+        super.setUserVisibleHint(isVisibleToUser);
     }
 
     @Override

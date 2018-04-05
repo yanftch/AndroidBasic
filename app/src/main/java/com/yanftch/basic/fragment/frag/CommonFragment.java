@@ -89,12 +89,23 @@ public class CommonFragment extends Fragment {
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
+        Log.e(TAG, "setUserVisibleHint: " + index + "   " + isVisibleToUser);
+        if (isVisibleToUser) {
+            Log.e(TAG, "setUserVisibleHint: 此处我要在<CommonFragment>中进行网络请求~~~~111");
+        }
+        boolean userVisibleHint = getUserVisibleHint();
         super.setUserVisibleHint(isVisibleToUser);
-        Log.e(TAG, "setUserVisibleHint: "+index+"   "+isVisibleToUser);
     }
+
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        Log.e(TAG, "onHiddenChanged: "+index+"   "+hidden);
+        Log.e(TAG, "onHiddenChanged: " + index + "   " + hidden);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
     }
 }
