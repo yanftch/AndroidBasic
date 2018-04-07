@@ -65,6 +65,7 @@ public class CommonFragment2 extends Fragment {
     }
 
     private void initView(View view) {
+        view.setBackgroundColor(getResources().getColor(R.color.color_f39800));
         commonTextView = (TextView) view.findViewById(R.id.commonTextView);
         commonTextView.setText("index===---" + index + "");
         commonTextView.setTextColor(getResources().getColor(R.color.colorAccent));

@@ -65,6 +65,7 @@ public class CommonFragment3 extends Fragment {
     }
 
     private void initView(View view) {
+        view.setBackgroundColor(getResources().getColor(R.color.color_443301));
         commonTextView = (TextView) view.findViewById(R.id.commonTextView);
         commonTextView.setText("index===---" + index + "");
         commonTextView.setTextColor(getResources().getColor(R.color.color_44dd33));
@@ -87,10 +88,11 @@ public class CommonFragment3 extends Fragment {
         super.onDestroy();
         Log.e(TAG, "onDestroy: " + index);
     }
+
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        Log.e(TAG, "setUserVisibleHint: "+index+"   "+isVisibleToUser);
-        if (isVisibleToUser){
+        Log.e(TAG, "setUserVisibleHint: " + index + "   " + isVisibleToUser);
+        if (isVisibleToUser) {
             Log.e(TAG, "setUserVisibleHint: 此处我要在<CommonFragment3>中进行网络请求~~~~333");
         }
         super.setUserVisibleHint(isVisibleToUser);
@@ -99,6 +101,6 @@ public class CommonFragment3 extends Fragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        Log.e(TAG, "onHiddenChanged: "+index+"   "+hidden);
+        Log.e(TAG, "onHiddenChanged: " + index + "   " + hidden);
     }
 }

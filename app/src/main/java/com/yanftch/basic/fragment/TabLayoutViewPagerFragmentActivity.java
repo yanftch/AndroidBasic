@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 
 import com.yanftch.applibrary.base.BaseActivity;
@@ -65,7 +66,69 @@ public class TabLayoutViewPagerFragmentActivity extends BaseActivity {
 //        mAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(mMyAdapter);
         viewPager.setOffscreenPageLimit(1);
+        viewPager.setPageTransformer(true, new DepthTransform());
+
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    /**
+     *
+     */
+    class DepthTransform implements ViewPager.PageTransformer {
+        private static final float MIN_SCALE = 0.75f;
+
+        @Override
+        public void transformPage(View view, float position) {
+            int width = view.getWidth();
+            if (position < -1) {
+                view.setAlpha(1);
+            } else if (position < 0) {
+                view.setTranslationX(0);
+                view.setAlpha(1);
+                view.setScaleX(1);
+                view.setScaleY(1);
+            } else if (position < 1) {
+                view.setAlpha(1 - position);
+
+                view.setTranslationX(width * -position);
+
+                float scaleFactor = MIN_SCALE
+                        + (1 - MIN_SCALE) * (1 - Math.abs(position));
+                view.setScaleX(scaleFactor);
+                view.setScaleY(scaleFactor);
+            }
+        }
+    }
+
+    /**
+     * 放大形式进入的ViewPager
+     */
+    class ZoomInTransform implements ViewPager.PageTransformer {
+        private static final String TAG = "dah_ZoomInTransform";
+
+        @Override
+        public void transformPage(View page, float position) {
+            int width = page.getWidth();
+            int height = page.getHeight();
+            //這裏只對右邊的view做了操作
+            if (position > 0 && position <= 1) {
+                //position是1.0->0,但是沒有等於0
+                Log.e(TAG, "right----position====" + position);
+                //設置該view的X軸不動
+                page.setTranslationX(-width * position);
+                //設置縮放中心點在該view的正中心
+                page.setPivotX(width / 2);
+                page.setPivotY(height / 2);
+                //設置縮放比例（0.0，1.0]
+                page.setScaleX(1 - position);
+                page.setScaleY(1 - position);
+
+            } else if (position >= -1 && position < 0) {//left scrolling
+
+            } else {//center
+
+            }
+        }
     }
 
     class MyAdapter extends FragmentPagerAdapter {
