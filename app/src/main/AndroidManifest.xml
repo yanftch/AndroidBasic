@@ -50,6 +50,8 @@
         </activity>
         <activity android:name=".animation.Animation2Activity">
         </activity>
+        <activity android:name=".diy_view.DiyViewActivity">
+        </activity>
     </application>
 
 </manifest>

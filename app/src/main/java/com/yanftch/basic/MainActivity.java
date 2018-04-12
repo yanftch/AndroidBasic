@@ -12,6 +12,7 @@ import com.yanftch.applibrary.lv_adapter.CommonAdapter;
 import com.yanftch.applibrary.lv_adapter.ViewHolder;
 import com.yanftch.basic.animation.Animation2Activity;
 import com.yanftch.basic.animation.AnimationActivity;
+import com.yanftch.basic.diy_view.DiyViewActivity;
 import com.yanftch.basic.entity.Item;
 import com.yanftch.basic.event.EventActivity;
 import com.yanftch.basic.fragment.FragmentChangeMainActivity;
@@ -55,6 +56,7 @@ public class MainActivity extends BaseActivity {
         datas.add(new Item("事件分发机制", 8, EventActivity.class));
         datas.add(new Item("Fragment切换", 9, FragmentChangeMainActivity.class));
         datas.add(new Item("动画", 10, Animation2Activity.class));
+        datas.add(new Item("自定义View", 11, DiyViewActivity.class));
     }
 
     @Override

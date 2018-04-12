@@ -4,26 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <Button
+        android:id="@+id/btnAsyncTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask"/>
 
     <ImageView
+        android:id="@+id/ivAnchor"
+        android:layout_below="@id/btnAsyncTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_test_3"
         android:transitionName="@string/app_name"
         />
+
     <TextView
+        android:id="@+id/textViewHandler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="111"
-        android:id="@+id/textViewHandler"/>
+        android:visibility="gone"/>
 
-    <Button
-        android:id="@+id/btnTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="test"
-        />
 </RelativeLayout>
