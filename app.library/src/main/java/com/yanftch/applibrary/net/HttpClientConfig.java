@@ -73,13 +73,13 @@ public class HttpClientConfig {
             Request.Builder builder = request.newBuilder();
             /*.addHeader("Content-type", "application/json; charset=utf-8")*/
             builder.addHeader("User-Agent", "Android")
-                    .addHeader("memberType", "4")
-                    .addHeader("appVersion", "1.3.0-debug")
-                    .addHeader("memberIdentity", "AB_HX")
+                    .addHeader("memberType", "")
+                    .addHeader("appVersion", "1.3.2-debug")
+                    .addHeader("memberIdentity", "")
                     .addHeader("os", "android")
                     .addHeader("security", "862772032328875")
                     .addHeader("teamIdentity", "2")
-                    .addHeader("token", "nU0Q5Pd+wPlW/lMINAsfNKnNumE");
+                    .addHeader("token", "");
             request = builder.build();
             Log.e(TAG, "intercept: 请求URL : " + request.url().toString());
             return chain.proceed(request);

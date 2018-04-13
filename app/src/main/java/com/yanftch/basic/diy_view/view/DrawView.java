@@ -11,6 +11,7 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -24,10 +25,23 @@ public class DrawView extends View {
     private static final String TAG = "dah_DrawView";
     private final static String DEFAULT_COLOR = "#FF0000";
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.e(TAG, "onMeasure: ");
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        Log.e(TAG, "onLayout: ");
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Log.e(TAG, "onDraw: ");
         //不要嫌弃我在onDraw里边实例化这么多画笔。。。只是为了好看而已o(╯□╰)o
         //绘制背景色
         canvas.drawColor(Color.parseColor("#999999"));

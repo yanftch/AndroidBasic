@@ -27,7 +27,6 @@ public class DrawOrderView extends BaseView {
         defaultPaint.setColor(Color.parseColor("#00ff00"));
         canvas.drawCircle(300, 300,200, defaultPaint);
 
-
     }
 
     public DrawOrderView(Context context) {

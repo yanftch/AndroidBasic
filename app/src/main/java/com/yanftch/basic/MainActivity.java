@@ -18,10 +18,12 @@ import com.yanftch.basic.event.EventActivity;
 import com.yanftch.basic.fragment.FragmentChangeMainActivity;
 import com.yanftch.basic.glide.GlideDemoActivity;
 import com.yanftch.basic.handler.HandlerActivity;
+import com.yanftch.basic.mvp.MVPTestActivity;
 import com.yanftch.basic.recyclerview.RecyclerViewHeadFootActivity;
 import com.yanftch.basic.rxjava.RxJavaMainActivity;
 import com.yanftch.basic.service.ServiceActivity;
 import com.yanftch.basic.sliding_conflict.SlidingConflictActivity;
+import com.yanftch.basic.test.TestActivity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -57,6 +59,8 @@ public class MainActivity extends BaseActivity {
         datas.add(new Item("Fragment切换", 9, FragmentChangeMainActivity.class));
         datas.add(new Item("动画", 10, Animation2Activity.class));
         datas.add(new Item("自定义View", 11, DiyViewActivity.class));
+        datas.add(new Item("Test", 12, TestActivity.class));
+        datas.add(new Item("Test2", 13, MVPTestActivity.class));
     }
 
     @Override

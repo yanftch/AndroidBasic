@@ -35,6 +35,7 @@ public class DiyViewActivity extends BaseActivity {
         pageModels.add(new PageModel(R.string.title_draw_color, R.layout.practice_color));
         pageModels.add(new PageModel(R.string.title_draw_circle, R.layout.practice_circle));
         pageModels.add(new PageModel(R.string.title_draw_rect, R.layout.practice_shunxu));
+        pageModels.add(new PageModel(R.string.title_draw_anim, R.layout.practice_anim));
     }
 
 

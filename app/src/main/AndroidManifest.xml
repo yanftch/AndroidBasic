@@ -52,6 +52,8 @@
         </activity>
         <activity android:name=".diy_view.DiyViewActivity">
         </activity>
+        <activity android:name=".mvp.MVPTestActivity">
+        </activity>
     </application>
 
 </manifest>

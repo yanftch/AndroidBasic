@@ -2,11 +2,10 @@
     <string name="app_name">AndroidBasic</string>
 
 
-
     <string name="title_draw_color">画点,线</string>
     <string name="title_draw_circle">Canvas辅助</string>
     <string name="title_draw_rect">顺序</string>
-    <string name="title_draw_point">drawPoint()</string>
+    <string name="title_draw_anim">动画</string>
     <string name="title_draw_oval">drawOval()</string>
     <string name="title_draw_line">drawLine()</string>
     <string name="title_draw_round_rect">drawRoundRect()</string>
