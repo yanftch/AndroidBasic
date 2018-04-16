@@ -54,6 +54,12 @@
         </activity>
         <activity android:name=".mvp.MVPTestActivity">
         </activity>
+        <activity android:name=".what.DoubleRecyclerViewActivity">
+        </activity>
+        <activity android:name=".setcontentview.SetContentViewActivity">
+        </activity>
+        <activity android:name=".setcontentview.ResultActivity">
+        </activity>
     </application>
 
 </manifest>

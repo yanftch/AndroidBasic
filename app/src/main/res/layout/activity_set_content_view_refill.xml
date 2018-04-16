@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/value_10dp">
+
+    <TextView
+        android:id="@+id/tvAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="account"
+        android:padding="@dimen/value_5dp"
+        android:textColor="@color/color_2480d4"/>
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:padding="@dimen/value_5dp"
+        android:textColor="@color/color_2480d4"
+        app:layout_constraintTop_toBottomOf="@id/tvAccount"/>
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重填"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword"
+        />
+
+    <Button
+        android:id="@+id/btnSubmit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        app:layout_constraintLeft_toRightOf="@id/btnReset"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword"
+        />
+</android.support.constraint.ConstraintLayout>

@@ -22,8 +22,10 @@ import com.yanftch.basic.mvp.MVPTestActivity;
 import com.yanftch.basic.recyclerview.RecyclerViewHeadFootActivity;
 import com.yanftch.basic.rxjava.RxJavaMainActivity;
 import com.yanftch.basic.service.ServiceActivity;
+import com.yanftch.basic.setcontentview.SetContentViewActivity;
 import com.yanftch.basic.sliding_conflict.SlidingConflictActivity;
 import com.yanftch.basic.test.TestActivity;
+import com.yanftch.basic.what.DoubleRecyclerViewActivity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,6 +50,9 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setTitle() {
         datas = new ArrayList<>();
+        datas.add(new Item("setContentView", 15, SetContentViewActivity.class));
+        datas.add(new Item("DoubleRv", 14, DoubleRecyclerViewActivity.class));
+
         datas.add(new Item("Handler", 0, HandlerActivity.class));
         datas.add(new Item("RxJava", 1, RxJavaMainActivity.class));
         datas.add(new Item("Service", 2, ServiceActivity.class));
