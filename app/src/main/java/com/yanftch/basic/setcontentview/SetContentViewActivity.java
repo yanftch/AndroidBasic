@@ -18,6 +18,15 @@ import com.yanftch.basic.R;
 
 import butterknife.ButterKnife;
 
+/**
+ * Author : yanftch
+ * Date   : 2018/4/16
+ * Time   : 16:23
+ * Desc   : 研究setContentView的流程
+ * </p>
+ * https://blog.csdn.net/nugongahou110/article/details/49662211
+ */
+
 public class SetContentViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "dah_SetContentViewActivity";
@@ -110,8 +119,8 @@ public class SetContentViewActivity extends AppCompatActivity implements View.On
             switch (v.getId()) {
                 case R.id.btnReset:
                     //重填
-                    Animation animation =new AlphaAnimation(0f,1f);
-                    fillView.startAnimation(animation);
+                    Animation animation = new AlphaAnimation(0f, 1f);
+                    fillView.setAnimation(animation);
                     setContentView(fillView);
                     //将当前页面改为填写表单页面
                     currentLayout = LAYOUT_FILL;

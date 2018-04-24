@@ -1,7 +1,8 @@
 package com.yanftch.basic;
 
+import android.app.IntentService;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,7 @@ import com.yanftch.basic.event.EventActivity;
 import com.yanftch.basic.fragment.FragmentChangeMainActivity;
 import com.yanftch.basic.glide.GlideDemoActivity;
 import com.yanftch.basic.handler.HandlerActivity;
+import com.yanftch.basic.kotlin.Kotlin1Activity;
 import com.yanftch.basic.mvp.MVPTestActivity;
 import com.yanftch.basic.recyclerview.RecyclerViewHeadFootActivity;
 import com.yanftch.basic.rxjava.RxJavaMainActivity;
@@ -40,7 +42,24 @@ public class MainActivity extends BaseActivity {
     private ListView mListView;
     private List<Item> datas;
     private CommonAdapter mCommonAdapter;
-    private SharedPreferences mSharedPreferences;
+    IntentService mIntentService;
+    class MyIn extends IntentService{
+
+        /**
+         * Creates an IntentService.  Invoked by your subclass's constructor.
+         *
+         * @param name Used to name the worker thread, important only for debugging.
+         */
+        public MyIn(String name) {
+            super(name);
+        }
+
+        @Override
+        protected void onHandleIntent(@Nullable Intent intent) {
+
+        }
+    }
+
 
     @Override
     public int setLayout() {
@@ -50,6 +69,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setTitle() {
         datas = new ArrayList<>();
+        datas.add(new Item("kotlin", 16, Kotlin1Activity.class));
         datas.add(new Item("setContentView", 15, SetContentViewActivity.class));
         datas.add(new Item("DoubleRv", 14, DoubleRecyclerViewActivity.class));
 
@@ -147,6 +167,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void widgetClick(View v) {
-
+//        Glide.with(this).load("1").transform().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true).into(new ImageView(this));
     }
+
 }

@@ -5,18 +5,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.yanftch.basic.event.EventActivity">
 
     <com.yanftch.basic.event.MyViewGroup
+        android:id="@+id/myViewGroup"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:background="@color/color_44dd33">
+        android:background="@color/color_44dd33"
+        android:visibility="gone">
 
         <com.yanftch.basic.event.MyView
+            android:id="@+id/myView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_centerInParent="true"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            android:visibility="gone"/>
     </com.yanftch.basic.event.MyViewGroup>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <com.yanftch.basic.event.MyListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            android:background="@color/color_999999"
+            android:scrollbars="none"/>
+
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="1"-->
+        <!--android:textColor="@color/color_dd3333"-->
+        <!--android:textSize="@dimen/value_20_dp"/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="12"-->
+        <!--android:textColor="@color/color_dd3333"-->
+        <!--android:textSize="@dimen/value_20_dp"/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="123"-->
+        <!--android:textColor="@color/color_dd3333"-->
+        <!--android:textSize="@dimen/value_20_dp"/>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="1234"-->
+        <!--android:textColor="@color/color_dd3333"-->
+        <!--android:textSize="@dimen/value_20_dp"/>-->
+
+        <!---->
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="123456789"-->
+        <!--android:textColor="@color/color_333333"-->
+        <!--android:textSize="@dimen/value_20_dp"/>-->
+
+        <!--</LinearLayout>-->
+    </ScrollView>
 
 </LinearLayout>
