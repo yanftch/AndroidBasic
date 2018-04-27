@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:visibility="gone"
         android:text="123"
         android:textColor="@color/color_2480d4"
         android:textSize="@dimen/value_40dp"/>
@@ -17,7 +18,7 @@
     <com.yanftch.basic.sliding_conflict.ChildViewPager
         android:id="@+id/innerViewPager"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="300dp"
         android:background="@color/color_f4f4f4"
         app:layout_constraintTop_toBottomOf="@id/textViewInnerFragment"/>
 </android.support.constraint.ConstraintLayout>

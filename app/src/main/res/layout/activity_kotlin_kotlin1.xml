@@ -4,9 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <TextView
+        android:id="@+id/tvNoFbc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="哈哈哈哈"
+        android:textSize="@dimen/value_20_dp"/>
     <TextView
         android:id="@+id/tvKt1"
+        app:layout_constraintTop_toBottomOf="@id/tvNoFbc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="加载图片"

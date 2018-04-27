@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="@color/color_44dd33"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <com.yanftch.basic.event.MyView
             android:id="@+id/myView"
@@ -21,11 +21,12 @@
             android:layout_height="200dp"
             android:layout_centerInParent="true"
             android:background="@color/colorPrimary"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
     </com.yanftch.basic.event.MyViewGroup>
 
     <ScrollView
         android:id="@+id/scrollView"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">

@@ -4,7 +4,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.yanftch.applibrary.base.BaseActivity;
@@ -22,13 +21,12 @@ import java.util.List;
 
 public class SlidingConflictActivity extends BaseActivity {
     private static final String TAG = "dah_SlidingConflictActivity";
-private ViewPager viewPager;
+    private ParentViewPager viewPager;
 
     private TabLayout tabLayout;
     private List<Fragment> mFragments;
     private MyAdapter mMyAdapter;
     private List<String> titles;
-
 
 
     @Override
@@ -44,14 +42,14 @@ private ViewPager viewPager;
 
     @Override
     public void initWidget() {
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = (ParentViewPager) findViewById(R.id.viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         mFragments = new ArrayList<>();
         titles = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             InnerFragment innerFragment = InnerFragment.newInstance(i);
             mFragments.add(innerFragment);
-            titles.add("Title:"+i);
+            titles.add("Title:" + i);
         }
         mMyAdapter = new MyAdapter(getSupportFragmentManager());
 

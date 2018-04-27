@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/value_40dp"/>
 
-            <android.support.v4.view.ViewPager
+            <com.yanftch.basic.sliding_conflict.ParentViewPager
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>

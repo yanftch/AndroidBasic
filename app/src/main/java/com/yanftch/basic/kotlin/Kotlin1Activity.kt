@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.yanftch.basic.R
+import kotlinx.android.synthetic.main.activity_kotlin_kotlin1.*
 
 
 /**
@@ -21,30 +23,49 @@ import com.yanftch.basic.R
  */
 class Kotlin1Activity : Activity() {
     val TAG: String = "dah_Kotlin1Activity";
-    var view : View? = null
-    private var tvKt1: TextView? = null;
+    var listView: ListView? = null
+
+    var view: View? = null
+    lateinit var tv: TextView
+    var tvKt1: TextView? = null;
+
     var imageView: ImageView? = null;
     var user: User? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_kotlin1)
+
+
+
         if (savedInstanceState == null) {
             user = User("小明", 22);
         }
-        tvKt1 = findViewById(R.id.tvKt1) as TextView?
+        tvKt1 = findViewById(R.id.tvKt1) as TextView?;
         imageView = findViewById(R.id.ivKotline1) as ImageView?
         Log.e(TAG, "imageView.scaleType===" + imageView!!.scaleType);
 
         tvKt1!!.text = "11111"
         tvKt1!!.textSize = 50F;
 
+        tvNoFbc.setOnClickListener {
+            toast(this, "哈哈哈哈哈")
+        }
+        tvNoFbc.text = "不好啊"
 
         tvKt1!!.setOnClickListener {
             Log.e("dah", "121212")
             toast(this, "ceshi12345678")
             loadImage();
         }
+    }
+
+    /**
+     * 枚举
+     */
+    enum class DIRECTION {
+        NORTH, SOUTH, WEST, EAST
+
     }
 
     /**

@@ -1,8 +1,6 @@
 package com.yanftch.basic;
 
-import android.app.IntentService;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +27,7 @@ import com.yanftch.basic.sliding_conflict.SlidingConflictActivity;
 import com.yanftch.basic.test.TestActivity;
 import com.yanftch.basic.what.DoubleRecyclerViewActivity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -37,30 +36,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class MainActivity extends BaseActivity {
     private static final String TAG = "dah_MainActivity";
     private ListView mListView;
     private List<Item> datas;
     private CommonAdapter mCommonAdapter;
-    IntentService mIntentService;
-    class MyIn extends IntentService{
-
-        /**
-         * Creates an IntentService.  Invoked by your subclass's constructor.
-         *
-         * @param name Used to name the worker thread, important only for debugging.
-         */
-        public MyIn(String name) {
-            super(name);
-        }
-
-        @Override
-        protected void onHandleIntent(@Nullable Intent intent) {
-
-        }
-    }
-
-
     @Override
     public int setLayout() {
         return R.layout.activity_main;
@@ -168,6 +154,28 @@ public class MainActivity extends BaseActivity {
     @Override
     public void widgetClick(View v) {
 //        Glide.with(this).load("1").transform().diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true).into(new ImageView(this));
+    }
+
+    // TODO: 2018/4/25
+    private void okhttpMethod() throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        Request request;
+        Request.Builder builder = new Request.Builder();
+        request = builder.url("url").build();
+        Response execute = client.newCall(request).execute();
+        //移步
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+            }
+        });
+
     }
 
 }
