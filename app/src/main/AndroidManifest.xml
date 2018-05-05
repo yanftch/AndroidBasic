@@ -23,7 +23,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcut"/>
         </activity>
+
 
         <service android:name=".service.MyService"/>
         <service android:name=".service.MyBindService"/>
@@ -40,7 +44,7 @@
         </activity>
         <activity android:name=".sliding_conflict.SlidingConflictActivity">
         </activity>
-        <activity android:name=".glide.GlideDemoActivity"/>
+        <activity android:name=".glide.GlideDemoActivity"></activity>
         <activity android:name=".recyclerview.RecyclerViewHeadFootActivity"/>
         <activity android:name=".animation.AnimationActivity">
         </activity>

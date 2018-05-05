@@ -2,6 +2,7 @@ package com.yanftch.basic.kotlin
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -31,15 +32,39 @@ class Kotlin1Activity : Activity() {
 
     var imageView: ImageView? = null;
     var user: User? = null;
+    /**
+     * Intent 跳转
+     */
+    fun start(context: Context, bundle: Bundle) {
+        var intent = Intent(context, Kotlin1Activity::class.java);
+        intent.putExtra("bundle_key", bundle);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 获取传递的值
+     */
+    fun getBundleData() {
+        var bundle = intent.getBundleExtra("bundle_key")
+        var string = bundle.getString("string_key")
+        Log.e(TAG, string + "¬¬¬¬¬¬¬¬¬¬¬¬˚˚˚˚˚∆∆©©©©©©∂∂∂∂∂åå≈µ≤œ¥øπ¬˚∆©∂å≈µ≤≥")
+    }
+
+    /**
+     * 有返回值的function
+     */
+    fun getString(string: String): String {
+        return "123"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_kotlin1)
 
-
-
         if (savedInstanceState == null) {
             user = User("小明", 22);
+//            var  aa = A.getStr()
+
         }
         tvKt1 = findViewById(R.id.tvKt1) as TextView?;
         imageView = findViewById(R.id.ivKotline1) as ImageView?
