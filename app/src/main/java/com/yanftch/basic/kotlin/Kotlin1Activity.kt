@@ -6,10 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.ListView
-import android.widget.TextView
-import android.widget.Toast
+import android.view.ViewGroup
+import android.widget.*
 import com.bumptech.glide.Glide
 import com.yanftch.basic.R
 import kotlinx.android.synthetic.main.activity_kotlin_kotlin1.*
@@ -23,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_kotlin_kotlin1.*
  * Desc :
  */
 class Kotlin1Activity : Activity() {
+    lateinit var list: ArrayList<String>
     val TAG: String = "dah_Kotlin1Activity";
     var listView: ListView? = null
 
@@ -57,9 +56,31 @@ class Kotlin1Activity : Activity() {
         return "123"
     }
 
+    /**
+     * 显示ListVIew
+     */
+    private fun setListView() {
+        list = ArrayList();
+        var i: Int = 0
+        var end: Int = 40
+        do {
+            list.add("item$i")
+//            list.add("你好" + "_" + "$i")
+            i++;
+        } while (i < end)
+
+        ktListView.dividerHeight = 10;
+        var adapter = MyAdapter(list, this);
+        ktListView.adapter = adapter;
+        ktListView.onItemClickListener =
+                AdapterView.OnItemClickListener { parent, view, position, id -> toast(parent.context, "position==" + position) }
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_kotlin1)
+        setListView();
 
         if (savedInstanceState == null) {
             user = User("小明", 22);
@@ -84,6 +105,7 @@ class Kotlin1Activity : Activity() {
             loadImage();
         }
     }
+
 
     /**
      * 枚举
@@ -146,6 +168,39 @@ class Kotlin1Activity : Activity() {
         constructor(name: String, age: Int) {
             this.name = name
             this.age = age
+        }
+    }
+
+    /*
+    适配器
+     */
+    class MyAdapter(var datas: ArrayList<String>, var context: Context) : BaseAdapter() {
+        class ViewHolder(var itemView: View) {
+            var textView: TextView = itemView.findViewById(R.id.tv_name) as TextView;
+        }
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var viewHolder: ViewHolder? = null
+            var view: View;
+            if (convertView == null) {
+                view = View.inflate(context, R.layout.item_test, null);
+                viewHolder = ViewHolder(view)
+                view.tag = viewHolder
+            } else {
+                view = convertView
+                viewHolder = view.tag as ViewHolder;
+            }
+            val item = getItem(position)
+            viewHolder.textView.text = item.toString();
+            return view;
+        }
+        override fun getItem(position: Int): Any {
+            return datas.get(position)
+        }
+        override fun getItemId(position: Int): Long {
+            return position.toLong()
+        }
+        override fun getCount(): Int {
+            return datas.size
         }
     }
 

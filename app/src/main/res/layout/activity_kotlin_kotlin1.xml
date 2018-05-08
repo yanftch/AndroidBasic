@@ -4,24 +4,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/tvNoFbc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="哈哈哈哈"
         android:textSize="@dimen/value_20_dp"/>
+
     <TextView
         android:id="@+id/tvKt1"
-        app:layout_constraintTop_toBottomOf="@id/tvNoFbc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="加载图片"
-        android:textSize="@dimen/value_20_dp"/>
+        android:textSize="@dimen/value_20_dp"
+        app:layout_constraintTop_toBottomOf="@id/tvNoFbc"/>
 
     <ImageView
-        android:layout_width="wrap_content"
         android:id="@+id/ivKotline1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_test_0"
         app:layout_constraintTop_toBottomOf="@id/tvKt1"/>
+
+    <ListView
+        android:id="@+id/ktListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ivKotline1"/>
 </android.support.constraint.ConstraintLayout>

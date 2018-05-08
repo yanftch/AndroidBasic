@@ -1,10 +1,13 @@
 package com.yanftch.basic;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.yanftch.applibrary.base.BaseActivity;
 import com.yanftch.applibrary.lv_adapter.CommonAdapter;
@@ -13,6 +16,7 @@ import com.yanftch.basic.animation.Animation2Activity;
 import com.yanftch.basic.animation.AnimationActivity;
 import com.yanftch.basic.diy_view.DiyViewActivity;
 import com.yanftch.basic.entity.Item;
+import com.yanftch.basic.entity.User;
 import com.yanftch.basic.event.EventActivity;
 import com.yanftch.basic.fragment.FragmentChangeMainActivity;
 import com.yanftch.basic.glide.GlideDemoActivity;
@@ -28,6 +32,10 @@ import com.yanftch.basic.test.TestActivity;
 import com.yanftch.basic.what.DoubleRecyclerViewActivity;
 
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -47,6 +55,7 @@ public class MainActivity extends BaseActivity {
     private ListView mListView;
     private List<Item> datas;
     private CommonAdapter mCommonAdapter;
+
     @Override
     public int setLayout() {
         return R.layout.activity_main;
@@ -54,6 +63,21 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setTitle() {
+        anni2(R.string.app_name);
+        // TODO: 2018/5/5 练习反射
+        try {
+            Class c = Class.forName("java.lang.String");
+            Field[] declaredFields = c.getDeclaredFields();
+            Method[] declaredMethods = c.getDeclaredMethods();
+
+            for (int i = 0; i < declaredFields.length; i++) {
+                Log.e(TAG, "setTitle: " + declaredFields[i].getName());
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         datas = new ArrayList<>();
         datas.add(new Item("kotlin", 16, Kotlin1Activity.class));
         datas.add(new Item("setContentView", 15, SetContentViewActivity.class));
@@ -172,9 +196,63 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-
+                anni("1");
+                anni2(R.string.app_name);
             }
         });
+
+    }
+
+    private void anni(@NonNull String string) {
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+    }
+
+    private void anni2(@StringRes int resId) {
+        Log.e(TAG, "anni2: " + resId);
+        try {
+            Class<?> aClass = Class.forName("com.yanftch.basic.entity.User");
+
+            //获取类名和包名
+            String 包名 = aClass.getPackage().getName();
+            String 类名 = aClass.getName();
+            //通过反射，用Class创建对象
+            Class<?> tClass = null;
+            tClass = Class.forName("com.yanftch.basic.entity.User");
+            User user = (User) tClass.newInstance();
+            user.setName("反射设置的Name");
+            user.setAge(999);
+            //通过反射机制，获得一个类的构造函数，并实现带参实例对象
+            User user1;
+            User user2;
+            Class<?> cClass = Class.forName("com.yanftch.basic.entity.User");
+            Constructor<?>[] constructors = cClass.getConstructors();
+            user1 = (User) constructors[0].newInstance();
+            user1.setName("user1-name");
+            user1.setAge(111111);
+            user2 = (User) constructors[1].newInstance("user2-name", 222222);
+            Log.e(TAG, "anni2: " + user1.toString() + "     " + user2.toString());
+
+            //通过反射机制，调用类方法
+            Class<?> dClass = Class.forName("com.yanftch.basic.entity.User");
+            User user3 = (User) dClass.newInstance();
+            Log.e(TAG, "anni2: user3.toString()===" + user3.toString());
+            Method method = dClass.getMethod("setAge", int.class);
+            method.invoke(dClass.newInstance(),123);
+
+            Log.e(TAG, "anni2: user3.toString()==333==" + user3.toString());
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
