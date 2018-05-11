@@ -19,5 +19,14 @@
         <item name="android:textSize">13sp</item>
 
     </style>
+    <!--图表样式-->
+    <declare-styleable name="graphStyle">
+        <attr name="graphTitle" format="string"/>
+        <attr name="xAxisName" format="string"/>
+        <attr name="yAxisName" format="string"/>
+        <attr name="axisTextSize" format="dimension|integer"/>
+        <attr name="axisTextColor" format="color|integer"/>
+
+    </declare-styleable>
 
 </resources>

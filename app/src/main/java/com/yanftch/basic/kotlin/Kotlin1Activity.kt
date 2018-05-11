@@ -9,6 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.bumptech.glide.Glide
+import com.yanftch.applibrary.net.HttpManager
+import com.yanftch.applibrary.net.ICallBack
+import com.yanftch.applibrary.net.MyTestBean
+import com.yanftch.applibrary.net.RetrofitManager
 import com.yanftch.basic.R
 import kotlinx.android.synthetic.main.activity_kotlin_kotlin1.*
 
@@ -21,9 +25,12 @@ import kotlinx.android.synthetic.main.activity_kotlin_kotlin1.*
  * Desc :
  */
 class Kotlin1Activity : Activity() {
+    private var photoUrl: String? = null;
+
     lateinit var list: ArrayList<String>
     val TAG: String = "dah_Kotlin1Activity";
     var listView: ListView? = null
+    lateinit var context: Context
 
     var view: View? = null
     lateinit var tv: TextView
@@ -77,10 +84,37 @@ class Kotlin1Activity : Activity() {
 
     }
 
+    private fun http_getHome() {
+        HttpManager.getInstance()
+                .with(context)
+                .setObservable(RetrofitManager.getService().fengHome)
+                .setCallBack(true, object : ICallBack<MyTestBean> {
+                    override fun onSuccess(normalBean: MyTestBean?) {
+                        if (null != normalBean && normalBean.productIntr != null) {
+                            Log.e(TAG, "onSuccess: " + normalBean.bannerList)
+                            tvNoFbc.text = normalBean.productIntr.piTitle
+                            for (i in 0 until normalBean.bannerList.size) {
+                                Log.e(TAG, "onSuccess: " + normalBean.bannerList[i].adTitle)
+                            }
+                        } else {
+                            Toast.makeText(context, "空数据", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onError(message: String) {
+                        Log.e(TAG, "--------------------" + message)
+                    }
+                })
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_kotlin1)
+        context = this
         setListView();
+        http_getHome()
+
+        photoUrl?.let { toast(context, it) }
 
         if (savedInstanceState == null) {
             user = User("小明", 22);
@@ -146,8 +180,8 @@ class Kotlin1Activity : Activity() {
                 .into(imageView);
     }
 
-    fun toast(context: Context, string: String) {
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+     open fun toast(context: Context, string: String) {
+        Toast.makeText(context, string, Toast.LENGTH_LONG).show()
     }
 
     fun log(string: String) {
@@ -178,6 +212,7 @@ class Kotlin1Activity : Activity() {
         class ViewHolder(var itemView: View) {
             var textView: TextView = itemView.findViewById(R.id.tv_name) as TextView;
         }
+
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var viewHolder: ViewHolder? = null
             var view: View;
@@ -193,12 +228,15 @@ class Kotlin1Activity : Activity() {
             viewHolder.textView.text = item.toString();
             return view;
         }
+
         override fun getItem(position: Int): Any {
             return datas.get(position)
         }
+
         override fun getItemId(position: Int): Long {
             return position.toLong()
         }
+
         override fun getCount(): Int {
             return datas.size
         }

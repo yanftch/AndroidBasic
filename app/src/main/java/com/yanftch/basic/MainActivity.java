@@ -28,6 +28,7 @@ import com.yanftch.basic.rxjava.RxJavaMainActivity;
 import com.yanftch.basic.service.ServiceActivity;
 import com.yanftch.basic.setcontentview.SetContentViewActivity;
 import com.yanftch.basic.sliding_conflict.SlidingConflictActivity;
+import com.yanftch.basic.test.TestViewActivity;
 import com.yanftch.basic.test.TestActivity;
 import com.yanftch.basic.what.DoubleRecyclerViewActivity;
 
@@ -79,6 +80,9 @@ public class MainActivity extends BaseActivity {
         }
 
         datas = new ArrayList<>();
+        datas.add(new Item("测试自定义view-纯view", 14, TestViewActivity.class));
+        datas.add(new Item("Test2", 13, MVPTestActivity.class));
+
         datas.add(new Item("kotlin", 16, Kotlin1Activity.class));
         datas.add(new Item("setContentView", 15, SetContentViewActivity.class));
         datas.add(new Item("DoubleRv", 14, DoubleRecyclerViewActivity.class));
@@ -95,7 +99,6 @@ public class MainActivity extends BaseActivity {
         datas.add(new Item("动画", 10, Animation2Activity.class));
         datas.add(new Item("自定义View", 11, DiyViewActivity.class));
         datas.add(new Item("Test", 12, TestActivity.class));
-        datas.add(new Item("Test2", 13, MVPTestActivity.class));
     }
 
     @Override
@@ -237,7 +240,7 @@ public class MainActivity extends BaseActivity {
             User user3 = (User) dClass.newInstance();
             Log.e(TAG, "anni2: user3.toString()===" + user3.toString());
             Method method = dClass.getMethod("setAge", int.class);
-            method.invoke(dClass.newInstance(),123);
+            method.invoke(dClass.newInstance(), 123);
 
             Log.e(TAG, "anni2: user3.toString()==333==" + user3.toString());
 
@@ -254,6 +257,25 @@ public class MainActivity extends BaseActivity {
         }
 
 
+    }
+
+    /**
+     * 静态内部类的单例模式
+     */
+    static class SingleTon {
+        //私有构造
+        private SingleTon() {
+        }
+
+        //静态内部类
+        private static class SingletonHolder {
+            private static final SingleTon instance = new SingleTon();
+        }
+
+        //获取方法
+        public SingleTon getInstance() {
+            return SingletonHolder.instance;
+        }
     }
 
 }

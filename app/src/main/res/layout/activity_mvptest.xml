@@ -10,6 +10,7 @@
 
     <Button
         android:id="@+id/btnGetHome"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="gethome"/>
@@ -18,11 +19,17 @@
         android:id="@+id/tvHomeData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:textColor="@color/color_2480d4"/>
 
     <TextView
         android:id="@+id/tvHomeData2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:textColor="@color/color_999999"/>
+
+    <com.yanftch.basic.view.ColumnView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
