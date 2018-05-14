@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yanftch.basic.md.FloatButtonActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/value_20dp"
+        android:background="@drawable/shape_circle_button_bg"
+        android:src="@drawable/ic_favorite_outline_white_24dp"
+        app:layout_anchor="@+id/recyclerView"
+        app:layout_anchorGravity="bottom|right"/>
+
+</android.support.design.widget.CoordinatorLayout>

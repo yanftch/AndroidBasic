@@ -22,14 +22,15 @@ import com.yanftch.basic.fragment.FragmentChangeMainActivity;
 import com.yanftch.basic.glide.GlideDemoActivity;
 import com.yanftch.basic.handler.HandlerActivity;
 import com.yanftch.basic.kotlin.Kotlin1Activity;
+import com.yanftch.basic.md.FloatButtonActivity;
 import com.yanftch.basic.mvp.MVPTestActivity;
 import com.yanftch.basic.recyclerview.RecyclerViewHeadFootActivity;
 import com.yanftch.basic.rxjava.RxJavaMainActivity;
 import com.yanftch.basic.service.ServiceActivity;
 import com.yanftch.basic.setcontentview.SetContentViewActivity;
 import com.yanftch.basic.sliding_conflict.SlidingConflictActivity;
-import com.yanftch.basic.test.TestViewActivity;
 import com.yanftch.basic.test.TestActivity;
+import com.yanftch.basic.test.TestViewActivity;
 import com.yanftch.basic.what.DoubleRecyclerViewActivity;
 
 import java.io.IOException;
@@ -80,6 +81,7 @@ public class MainActivity extends BaseActivity {
         }
 
         datas = new ArrayList<>();
+        datas.add(new Item("MD", 15, FloatButtonActivity.class));
         datas.add(new Item("测试自定义view-纯view", 14, TestViewActivity.class));
         datas.add(new Item("Test2", 13, MVPTestActivity.class));
 
