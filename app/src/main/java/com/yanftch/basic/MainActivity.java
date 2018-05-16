@@ -83,7 +83,7 @@ public class MainActivity extends BaseActivity {
         datas = new ArrayList<>();
         datas.add(new Item("MD", 15, FloatButtonActivity.class));
         datas.add(new Item("测试自定义view-纯view", 14, TestViewActivity.class));
-        datas.add(new Item("Test2", 13, MVPTestActivity.class));
+        datas.add(new Item("MVPTest", 13, MVPTestActivity.class));
 
         datas.add(new Item("kotlin", 16, Kotlin1Activity.class));
         datas.add(new Item("setContentView", 15, SetContentViewActivity.class));

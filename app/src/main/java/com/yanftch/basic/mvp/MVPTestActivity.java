@@ -3,26 +3,33 @@ package com.yanftch.basic.mvp;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.yanftch.applibrary.base.BaseActivity;
-import com.yanftch.applibrary.net.HttpManager;
-import com.yanftch.applibrary.net.ICallBack;
 import com.yanftch.applibrary.net.MyTestBean;
-import com.yanftch.applibrary.net.RetrofitManager;
 import com.yanftch.basic.R;
+import com.yanftch.basic.mvp.base.BaseMVPActivity;
 
-import butterknife.BindView;
+/**
+ * Author : yanftch
+ * Date   : 2018/5/16
+ * Time   : 10:55
+ * Desc   :
+ */
 
-public class MVPTestActivity extends BaseActivity {
+public class MVPTestActivity extends BaseMVPActivity<LoginContract.LoginView, LoginPresenter>
+        implements LoginContract.LoginView {
     private static final String TAG = "dah_MVPTestActivity";
-    @BindView(R.id.btnGetHome)
     Button mBtnGetHome;
-    @BindView(R.id.tvHomeData)
-    TextView mTvHomeData;
-    @BindView(R.id.tvHomeData2)
-    TextView mTvHomeData2;
+
+    @Override
+    protected void getData() {
+
+    }
+
+    @Override
+    protected LoginPresenter createPresenter() {
+        return new LoginPresenter();
+    }
 
     @Override
     public int setLayout() {
@@ -30,47 +37,33 @@ public class MVPTestActivity extends BaseActivity {
     }
 
     @Override
-    public void setTitle() {
-
+    protected void initView() {
+        mBtnGetHome = (Button) findViewById(R.id.btnGetHome);
+        mBtnGetHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.checkInfo((MVPTestActivity) mContext,"n","1");
+            }
+        });
     }
 
     @Override
-    public void initWidget() {
-        mBtnGetHome.setOnClickListener(this);
+    public void checkPass() {
+        Log.e(TAG, "checkPass: ");
     }
 
     @Override
-    public void widgetClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnGetHome:
-                http_getHome();
-                break;
-        }
+    public void checkFail(String message) {
+        Toast.makeText(this, "111:message===" + message, Toast.LENGTH_SHORT).show();
     }
 
-    private void http_getHome() {
-        HttpManager.getInstance()
-                .with(mContext)
-                .setObservable(RetrofitManager.getService().getFengHome())
-                .setCallBack(true, new ICallBack<MyTestBean>() {
-                    @Override
-                    public void onSuccess(MyTestBean normalBean) {
-                        if (null != normalBean && normalBean.getProductIntr() != null) {
-                            Log.e(TAG, "onSuccess: " + normalBean.getBannerList());
-                            mTvHomeData.setText(normalBean.getProductIntr().getPiTitle());
-                            for (int i = 0; i < normalBean.getBannerList().size(); i++) {
-                                Log.e(TAG, "onSuccess: " + normalBean.getBannerList().get(i).getAdTitle());
-                            }
-                            mTvHomeData2.setText(normalBean.getProductIntr().getImageUrl());
-                        } else {
-                            Toast.makeText(MVPTestActivity.this, "空数据", Toast.LENGTH_SHORT).show();
-                        }
-                    }
+    @Override
+    public void onLoginSuccess(MyTestBean myTestBean) {
+        Toast.makeText(this, "" + myTestBean.getBannerList().get(0).getAdTitle().toString(), Toast.LENGTH_SHORT).show();
+    }
 
-                    @Override
-                    public void onError(String message) {
-                        Log.e(TAG, "--------------------" + message);
-                    }
-                });
+    @Override
+    public void onLoginFailed(String failMsg) {
+        Toast.makeText(this, "error===" + failMsg, Toast.LENGTH_SHORT).show();
     }
 }

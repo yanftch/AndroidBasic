@@ -16,11 +16,13 @@ import com.squareup.leakcanary.RefWatcher;
 public class App extends Application {
     private static final String TAG = "dah_App";
     private RefWatcher refWatcher;
+    public static Context mContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
         refWatcher = setupLeakCanary();
+        mContext = this;
     }
 
     private RefWatcher setupLeakCanary() {
