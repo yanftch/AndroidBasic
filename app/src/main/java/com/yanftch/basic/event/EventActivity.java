@@ -70,14 +70,14 @@ public class EventActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.e(TAG, "dispatchTouchEvent: " + ev);
+        Log.e(TAG, "dispatchTouchEvent: " + printEventName(ev.getAction()));
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        Log.e(TAG, "onTouchEvent: " + event);
-        return super.onTouchEvent(event);
+    public boolean onTouchEvent(MotionEvent ev) {
+        Log.e(TAG, "onTouchEvent: " + printEventName(ev.getAction()));
+        return super.onTouchEvent(ev);
     }
 
     static class setHeightUtils {
@@ -98,4 +98,18 @@ public class EventActivity extends AppCompatActivity {
             listView.setLayoutParams(layoutParams);
         }
     }
+    private String printEventName(int code) {
+        String string = "";
+        if (code == 0) {
+            string = "ACTION_DOWN";
+        } else if (code == 1) {
+            string = "ACTION_UP";
+        } else if (code == 2) {
+            string = "ACTION_MOVE";
+        } else if (code == 3) {
+            string = "ACTION_CANCEL";
+        }
+        return string;
+    }
+
 }

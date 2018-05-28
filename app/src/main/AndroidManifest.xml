@@ -69,6 +69,8 @@
         </activity>
         <activity android:name=".md.FloatButtonActivity">
         </activity>
+        <activity android:name=".kotlin_demo.KotlinMainActivity">
+        </activity>
     </application>
 
 </manifest>

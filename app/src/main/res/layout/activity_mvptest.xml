@@ -14,6 +14,14 @@
         android:layout_height="wrap_content"
         android:text="gethome"/>
 
+    <ImageView
+        android:id="@+id/imageViewGif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_launcher"/>
+
     <TextView
         android:id="@+id/tvHomeData"
         android:layout_width="match_parent"

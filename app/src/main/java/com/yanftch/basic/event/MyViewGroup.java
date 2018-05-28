@@ -21,20 +21,34 @@ public class MyViewGroup extends RelativeLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.e(TAG, "dispatchTouchEvent: " + ev);
+        Log.d(TAG, "dispatchTouchEvent: " +printEventName(ev.getAction()));
         return super.dispatchTouchEvent(ev);
+    }
+
+    private String printEventName(int code) {
+        String string = "";
+        if (code == 0) {
+            string = "ACTION_DOWN";
+        } else if (code == 1) {
+            string = "ACTION_UP";
+        } else if (code == 2) {
+            string = "ACTION_MOVE";
+        } else if (code == 3) {
+            string = "ACTION_CANCEL";
+        }
+        return string;
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.e(TAG, "onInterceptTouchEvent: " + ev);
+        Log.d(TAG, "onInterceptTouchEvent: " + printEventName(ev.getAction()));
         return super.onInterceptTouchEvent(ev);
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        Log.e(TAG, "onTouchEvent: " + event);
-        return super.onTouchEvent(event);
+    public boolean onTouchEvent(MotionEvent ev) {
+        Log.d(TAG, "onTouchEvent: " + printEventName(ev.getAction()));
+        return super.onTouchEvent(ev);
     }
 
     public MyViewGroup(Context context) {

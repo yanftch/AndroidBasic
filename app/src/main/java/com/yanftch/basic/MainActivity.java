@@ -22,6 +22,7 @@ import com.yanftch.basic.fragment.FragmentChangeMainActivity;
 import com.yanftch.basic.glide.GlideDemoActivity;
 import com.yanftch.basic.handler.HandlerActivity;
 import com.yanftch.basic.kotlin.Kotlin1Activity;
+import com.yanftch.basic.kotlin_demo.KotlinMainActivity;
 import com.yanftch.basic.md.FloatButtonActivity;
 import com.yanftch.basic.mvp.MVPTestActivity;
 import com.yanftch.basic.recyclerview.RecyclerViewHeadFootActivity;
@@ -86,6 +87,7 @@ public class MainActivity extends BaseActivity {
         datas.add(new Item("MVPTest", 13, MVPTestActivity.class));
 
         datas.add(new Item("kotlin", 16, Kotlin1Activity.class));
+        datas.add(new Item("kotlinDemo-Main", 17, KotlinMainActivity.class));
         datas.add(new Item("setContentView", 15, SetContentViewActivity.class));
         datas.add(new Item("DoubleRv", 14, DoubleRecyclerViewActivity.class));
 
@@ -205,6 +207,7 @@ public class MainActivity extends BaseActivity {
                 anni2(R.string.app_name);
             }
         });
+
 
     }
 

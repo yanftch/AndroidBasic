@@ -15,6 +15,11 @@ import android.util.Log;
  */
 
 public class DiyView extends BaseView {
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+    }
+
     private static final String TAG = "dah_DiyView";
 
     @Override

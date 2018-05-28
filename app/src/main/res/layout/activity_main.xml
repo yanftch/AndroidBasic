@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#cccccc"
     android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/test_anchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/about"
+        android:gravity="center_vertical"
+        android:text="12345678125678912345678123234567876543456876543456734567891234567812345678985432345678765432345678765434568765434567"/>
+
+    <com.yanftch.basic.TextViewDrawable
+        android:id="@+id/divyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/about"
+        app:layout_constraintTop_toBottomOf="@id/test_anchor"
+        />
 
     <ListView
         android:id="@+id/mainListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@color/color_999999"
-        android:dividerHeight="@dimen/value_1dp"/>
+        android:dividerHeight="@dimen/value_1dp"
+        app:layout_constraintTop_toBottomOf="@id/divyView"/>
 
 </android.support.constraint.ConstraintLayout>

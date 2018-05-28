@@ -1,7 +1,5 @@
 package com.yanftch.basic.glide;
 
-import android.app.ActivityOptions;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,11 +12,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.yanftch.applibrary.base.BaseActivity;
 import com.yanftch.basic.R;
 import com.yanftch.basic.constant.ConstantValue;
-import com.yanftch.basic.handler.HandlerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,6 +34,12 @@ public class GlideDemoActivity extends BaseActivity {
     ImageView mIvGlideDemo;
     @BindView(R.id.llContainer)
     LinearLayout mLlContainer;
+    @BindView(R.id.btnLoadImg2)
+    Button mBtnLoadImg2;
+    @BindView(R.id.btnLoadImg3)
+    Button mBtnLoadImg3;
+    @BindView(R.id.btnLoadImg4)
+    Button mBtnLoadImg4;
 
     @Override
     public int setLayout() {
@@ -61,6 +63,9 @@ public class GlideDemoActivity extends BaseActivity {
         boolean debuggerConnected = Debug.isDebuggerConnected();
         Log.e(TAG, "initWidget: debuggerConnected===" + debuggerConnected);
         mBtnLoadImg.setOnClickListener(this);
+        mBtnLoadImg2.setOnClickListener(this);
+        mBtnLoadImg3.setOnClickListener(this);
+        mBtnLoadImg4.setOnClickListener(this);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -70,22 +75,31 @@ public class GlideDemoActivity extends BaseActivity {
             case R.id.btnLoadImg:
                 int lollipop = Build.VERSION_CODES.LOLLIPOP;
 
-                Intent intent = new Intent(mContext, HandlerActivity.class);
-                ActivityOptions options = ActivityOptions.makeScaleUpAnimation(mLlContainer, mLlContainer.getWidth() / 2, mLlContainer.getHeight() / 2, 0, 0);
-                startActivity(intent, options.toBundle());
-                loadImage();
+//                Intent intent = new Intent(mContext, HandlerActivity.class);
+//                ActivityOptions options = ActivityOptions.makeScaleUpAnimation(mLlContainer, mLlContainer.getWidth() / 2, mLlContainer.getHeight() / 2, 0, 0);
+//                startActivity(intent, options.toBundle());
+                loadImage(ConstantValue.imgUrl);
+                break;
+            case R.id.btnLoadImg2:
+                loadImage(ConstantValue.girUrl2);
+                break;
+            case R.id.btnLoadImg3:
+                loadImage(ConstantValue.gir_xiaoda1);
+                break;
+            case R.id.btnLoadImg4:
+                loadImage(ConstantValue.gir_xiaoda2);
                 break;
         }
     }
 
-    private void loadImage() {
+    private void loadImage(String imgURl) {
         Glide
                 .with(mContext)
-                .load(ConstantValue.imgUrl)
+                .load(imgURl)
+                .asGif()
                 .placeholder(R.drawable.loading_loading)
                 .error(R.drawable.loading_error)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)//不做缓存 处理
-                .override(400, 200)
+                .override(300, 300)
                 .into(mIvGlideDemo);
     }
 

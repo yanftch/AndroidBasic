@@ -3,6 +3,7 @@ package com.yanftch.basic.mvp;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.yanftch.applibrary.net.MyTestBean;
@@ -21,6 +22,8 @@ public class MVPTestActivity extends BaseMVPActivity<LoginContract.LoginView, Lo
     private static final String TAG = "dah_MVPTestActivity";
     Button mBtnGetHome;
 
+    private ImageView imageViewGif;
+
     @Override
     protected void getData() {
 
@@ -38,11 +41,12 @@ public class MVPTestActivity extends BaseMVPActivity<LoginContract.LoginView, Lo
 
     @Override
     protected void initView() {
+        imageViewGif = (ImageView) findViewById(R.id.imageViewGif);
         mBtnGetHome = (Button) findViewById(R.id.btnGetHome);
         mBtnGetHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mPresenter.checkInfo((MVPTestActivity) mContext,"n","1");
+                mPresenter.checkInfo((MVPTestActivity) mContext, "n", "1");
             }
         });
     }
