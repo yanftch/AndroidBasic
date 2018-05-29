@@ -12,10 +12,10 @@ import io.reactivex.functions.Function;
 public class ResponseMapConvert<T> implements Function<BaseResponse<T>, T> {
     @Override
     public T apply(BaseResponse<T> tBaseResponse) throws Exception {
-        if (tBaseResponse.getCode() == 0 || tBaseResponse.getCode() == 1) {
-            return tBaseResponse.getContent();
+        if (tBaseResponse.getErrorCode() == 0 || tBaseResponse.getErrorCode() == 1) {
+            return tBaseResponse.getData();
         } else {
-            throw new RuntimeException("请求失败(code=" + tBaseResponse.getCode() + ",message=" + tBaseResponse.getMsg() + ")");
+            throw new RuntimeException("请求失败(code=" + tBaseResponse.getErrorCode() + ",message=" + tBaseResponse.getErrorMsg() + ")");
         }
     }
 }

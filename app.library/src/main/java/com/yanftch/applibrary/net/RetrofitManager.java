@@ -13,7 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitManager {
     private final HttpService mHttpService;
-    private String base_url ="http://dat.dahuobaoxian.com/";
+//    private String base_url ="http://dat.dahuobaoxian.com/";
+    private String base_url ="http://www.wanandroid.com/";
     private volatile static RetrofitManager instance;
 
     public static RetrofitManager getInstance() {

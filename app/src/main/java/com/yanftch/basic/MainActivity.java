@@ -66,6 +66,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setTitle() {
+
         anni2(R.string.app_name);
         // TODO: 2018/5/5 练习反射
         try {
@@ -121,7 +122,7 @@ public class MainActivity extends BaseActivity {
                 Item item = datas.get(position);
                 Class clazz = item.getClazz();
                 if (null != clazz)
-                    startActivity(new Intent(mContext, clazz));
+                    startActivity(new Intent(MainActivity.this.mContext, clazz));
             }
         });
         map();

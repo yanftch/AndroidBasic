@@ -8,34 +8,38 @@ package com.yanftch.applibrary.net;
  */
 
 public class BaseResponse<T> {
-    private String msg;
-    private int code;
-    private T content;
+    //    private String msg;
+//    private int code;
+//    private T content;
+    private T data;
+    private int errorCode;
+    private String errorMsg;
 
-    public String getMsg() {
-        return msg;
+    public T getData() {
+        return data;
     }
 
-    public BaseResponse setMsg(String msg) {
-        this.msg = msg;
+    public BaseResponse setData(T data) {
+        this.data = data;
         return this;
     }
 
-    public int getCode() {
-        return code;
+    public int getErrorCode() {
+        return errorCode;
     }
 
-    public BaseResponse setCode(int code) {
-        this.code = code;
+    public BaseResponse setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
         return this;
     }
 
-    public T getContent() {
-        return content;
+    public String getErrorMsg() {
+        return errorMsg;
     }
 
-    public BaseResponse setContent(T content) {
-        this.content = content;
+    public BaseResponse setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
         return this;
     }
+
 }

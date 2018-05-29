@@ -18,7 +18,7 @@ import com.yanftch.applibrary.R;
 /**
  * Author : yanftch
  * Date : 2018/1/31
- * Time : 13:22
+ * Time : 13:22w
  * Desc : 通用Dialog封装
  */
 

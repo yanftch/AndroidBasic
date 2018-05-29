@@ -1,11 +1,14 @@
 package com.yanftch.applibrary.net;
 
+import com.yanftch.applibrary.entity.HomeListBean;
+
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.HTTP;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -20,6 +23,22 @@ import retrofit2.http.Path;
  */
 
 public interface HttpService {
+
+
+    /**
+     * 玩Android  API
+     * add by yanftch at 2018/5/29 16:34
+     */
+    //首页列表
+    @GET("article/list/{page}/json")
+    Observable<BaseResponse<HomeListBean>> getWanAndroidHomeList(@Path("page") int page);
+
+
+    /**
+     * -------------end------------
+     */
+
+
     @POST("member/app/getHome")
     Observable<BaseResponse<MyTestBean>> getFengHome();
 
