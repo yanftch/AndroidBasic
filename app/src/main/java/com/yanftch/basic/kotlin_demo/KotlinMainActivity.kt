@@ -10,10 +10,10 @@ import android.view.Window
 import android.widget.FrameLayout
 import com.yanftch.applibrary.util.BottomNavigationViewHelper
 import com.yanftch.basic.R
-import com.yanftch.basic.kotlin_demo.fragment.Fragment1
 import com.yanftch.basic.kotlin_demo.fragment.Fragment2
 import com.yanftch.basic.kotlin_demo.fragment.Fragment3
 import com.yanftch.basic.kotlin_demo.fragment.Fragment4
+import com.yanftch.basic.kotlin_demo.fragment.HomeFragment
 import com.yanftch.basic.kotlin_demo.util.ToastUtils
 
 class KotlinMainActivity : AppCompatActivity(), View.OnClickListener {
@@ -42,7 +42,7 @@ class KotlinMainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun initView() {
         mFragmentList = ArrayList()//初始化
-        mFragmentList.add(Fragment1.newInstance("string-1", "string-1111"))
+        mFragmentList.add(HomeFragment.newInstance("string-1", "string-1111"))
         mFragmentList.add(Fragment2())
         mFragmentList.add(Fragment3())
         mFragmentList.add(Fragment4())
