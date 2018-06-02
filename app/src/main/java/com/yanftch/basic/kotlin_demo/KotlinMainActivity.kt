@@ -23,10 +23,10 @@ class KotlinMainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     val TAG = "debug_KotlinMain";
-    lateinit var mBottomNavigationView: BottomNavigationView
-    lateinit var mFragmentContainer: FrameLayout
-    lateinit var mFragmentList: ArrayList<Fragment>
-    var mLastFragmentIndex: Int = 0 //记录上一次的索引值
+    private lateinit var mBottomNavigationView: BottomNavigationView
+    private lateinit var mFragmentContainer: FrameLayout
+    private lateinit var mFragmentList: ArrayList<Fragment>
+    private var mLastFragmentIndex: Int = 0 //记录上一次的索引值
 
 
     var context: Context = this;
@@ -57,7 +57,7 @@ class KotlinMainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun initListener() {
         mBottomNavigationView.setOnNavigationItemSelectedListener { item ->
-//            ToastUtils.showShort(context, item.title.toString())
+            //            ToastUtils.showShort(context, item.title.toString())
             var itemId = item.itemId
             when (itemId) {
                 R.id.tab_main_pager -> switchFragment(0)

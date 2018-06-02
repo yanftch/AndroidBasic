@@ -14,6 +14,7 @@ import com.yanftch.applibrary.net.ICallBack
 import com.yanftch.applibrary.net.RetrofitManager
 import com.yanftch.basic.R
 import com.yanftch.basic.kotlin_demo.adapter.HomeAdapter
+import com.yanftch.basic.kotlin_demo.util.ToastUtils
 
 class HomeFragment : Fragment() {
     private val TAG = "debug_HomeFragment"
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater!!.inflate(R.layout.fragment_fragment1, container, false)
+        val view = inflater!!.inflate(R.layout.kt_main_home_fragment, container, false).apply { tag=TAG }
         initView(view)
         return view
     }
@@ -47,6 +48,11 @@ class HomeFragment : Fragment() {
         mRecyclerView.layoutManager = linearLayoutManager
         mHomeAdapter = HomeAdapter(context,datas)
         mRecyclerView.adapter = mHomeAdapter
+        mHomeAdapter.setOnItemClickListener(object : HomeAdapter.OnItemClickListener{
+            override fun click(position: Int) {
+                ToastUtils.showShort(context,datas[position].author)
+            }
+        })
     }
 
     private fun http_getData() {

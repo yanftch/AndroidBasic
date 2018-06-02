@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:id="@+id/rvItemContainer"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_margin="@dimen/value_5dp"
+
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/value_5dp">
 
     <TextView
         android:id="@+id/tvHomeTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:padding="@dimen/value_5dp"
         android:text="123"
+        android:textSize="@dimen/value_20dp"
         />
-</android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

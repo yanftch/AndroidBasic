@@ -12,12 +12,14 @@
         android:id="@+id/test_anchor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:drawableLeft="@drawable/about"
         android:gravity="center_vertical"
         android:text="12345678125678912345678123234567876543456876543456734567891234567812345678985432345678765432345678765434568765434567"/>
 
     <com.yanftch.basic.TextViewDrawable
         android:id="@+id/divyView"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/about"

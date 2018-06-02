@@ -11,8 +11,13 @@ public class TestJava {
 
     public static void main(String[] args) {
         String s = "抱一抱";
+        s.length();
+        int arr[] = new int[12];
+        int length = arr.length;
+
+
         for (; ; ) {
-            System.out.println(s);
+            System.out.println(1/3);
         }
     }
 }
